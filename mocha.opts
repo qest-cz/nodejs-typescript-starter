@@ -3,4 +3,4 @@
 test/setup.ts
 src/**/**test.ts
 --exit
---timeout 15000
+--timeout 5000
