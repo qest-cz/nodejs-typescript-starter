@@ -15,7 +15,6 @@ dependencies to build. The repository solves 4 main parts
 - `nyc` for code coverage
 - `prettier`, `tslint` for code style checking
 - `nodemon` 
-- `pino-pretty` for nice console output
--  
+- `pino-pretty` for nice console output  
 
 
