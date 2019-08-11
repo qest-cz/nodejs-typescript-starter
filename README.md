@@ -10,16 +10,16 @@ dependencies to build. The repository solves 4 main parts
 - **Run in production mode** - run compiled code 
 
 
-### List of used libraries
+## List of used libraries
 - `mocha`, `chai` for testing - it will be updated with jest in 0.1.0
 - `nyc` for code coverage
 - `prettier`, `tslint` for code style checking
 - `nodemon` 
 - `pino-pretty` for nice console output  
 
-### Scripts
+## Scripts
 
-####Basic  scripts
+### Basic  scripts
 - `yarn`
 install dependencies
 - `yarn build`
@@ -33,13 +33,13 @@ apply prettier rules for project
 - `yarn start` 
 start compiled application
  
- ####Useful for CI/CD
+ ### Useful for CI/CD
  - `yarn test:cover` 
  check code coverage in project - it can be set in package.json (nyc part)
  - `yarn code:check` 
  checking code style policies by prettier and tslint
  
- ####FAQ
+ ### FAQ
  **Where can env variables can be set?**
  - For setting of env variables is used dotenv package https://www.npmjs.com/package/dotenv, there are .env files in `./config` folder
  
