@@ -17,4 +17,33 @@ dependencies to build. The repository solves 4 main parts
 - `nodemon` 
 - `pino-pretty` for nice console output  
 
+### Scripts
+
+####Basic  scripts
+- `yarn`
+install dependencies
+- `yarn build`
+build application
+- `yarn dev`
+start development mode
+- `yarn test`
+run tests
+- `yarn code:fix` 
+apply prettier rules for project
+- `yarn start` 
+start compiled application
+ 
+ ####Useful for CI/CD
+ - `yarn test:cover` 
+ check code coverage in project - it can be set in package.json (nyc part)
+ - `yarn code:check` 
+ checking code style policies by prettier and tslint
+ 
+ ####FAQ
+ **Where can env variables can be set?**
+ - For setting of env variables is used dotenv package https://www.npmjs.com/package/dotenv, there are .env files in `./config` folder
+ 
+ 
+
+
 
