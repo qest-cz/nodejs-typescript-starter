@@ -1,10 +1,13 @@
 {
   "name": "nodejs-typescript-starter",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Typescript starter pack for typescript/node.js development.",
   "main": "index.js",
   "repository": "https://github.com/qest-cz/nodejs-typescript-starter.git",
   "author": "Radim Štěpaník <radim.stepanik@gmail.com>",
+  "contributors": [
+    "Jindřich Máca <jindrich.maca@qest.cz>"
+  ],
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -13,12 +16,13 @@
     "tslint:run": "tslint --fix -c tslint.json -p .",
     "tslint:check": "tslint -c tslint.json -p .",
     "tsc:check": "tsc --noEmit",
-    "dev": "cross-env NODE_ENV=dev nodemon -e ts --exec \"ts-node -r dotenv/config src/index.ts dotenv_config_path=./config/.env \" | pino-pretty",
+    "dev": "cross-env NODE_ENV=dev ts-node-dev --no-notify -r dotenv/config src/index.ts dotenv_config_path=./config/.env | pino-pretty",
     "code:fix": "concurrently \"yarn tslint:run\" \"yarn prettier:run\"",
     "code:check": "concurrently \"yarn prettier:check\" \"yarn tslint:check\" \"yarn tsc:check\"",
     "test": "cross-env TS_NODE_PROJECT=\\\"tsconfig.test.json\\\" node -r dotenv/config ./node_modules/mocha/bin/_mocha dotenv_config_path=./config/.env.test --opts mocha.opts",
     "test:cover": "cross-env node -r dotenv/config ./node_modules/nyc/bin/nyc.js --check-coverage ./node_modules/mocha/bin/_mocha dotenv_config_path=./config/.env.test --opts mocha.opts",
-    "start": "node -r dotenv/config dist/src/index.js dotenv_config_path=./config/.env"
+    "start": "node -r dotenv/config dist/src/index.js dotenv_config_path=./config/.env",
+    "clean": "concurrently 'rm -rf dist' 'rm -rf coverage' 'rm -rf .nyc_output'"
   },
   "dependencies": {
     "dotenv": "^6.0.0"
@@ -31,12 +35,11 @@
     "concurrently": "^4.1.0",
     "cross-env": "^5.1.4",
     "mocha": "^5.1.1",
-    "nodemon": "^1.19.0",
     "nyc": "^14.1.1",
     "pino-pretty": "^3.2.0",
     "prettier": "^1.13.4",
     "rimraf": "^2.6.2",
-    "ts-node": "^8.3.0",
+    "ts-node-dev": "^1.0.0-pre.40",
     "tslint": "^5.18.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.13.0",
