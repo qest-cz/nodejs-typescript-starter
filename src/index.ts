@@ -1,5 +1,14 @@
 const main = async () => {
-    return ;
+    const a = {
+        b: {
+            c: {
+                test: 'test',
+            },
+        },
+    };
+    console.log(a?.b);
+
+    return;
 };
 
 main();
