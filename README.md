@@ -29,7 +29,7 @@ build application
 start development mode
 - `yarn test`
 run tests
-- `yarn code:fix`
+- `yarn eslint:fix`
 apply prettier rules for project
 - `yarn start`
 start compiled application
@@ -38,8 +38,8 @@ start compiled application
 
 - `yarn test:cover`
  check code coverage in project
-- `yarn code:check`
- checking code style policies by prettier and tslint
+- `yarn eslint:check`
+ checking code style policies by prettier and eslint
 
 ### FAQ
 
