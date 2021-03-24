@@ -1,6 +1,6 @@
 {
   "name": "nodejs-typescript-starter",
-  "version": "0.2.0",
+  "version": "0.1.0",
   "description": "Typescript starter pack for typescript/node.js development.",
   "main": "index.js",
   "repository": "https://github.com/qest-cz/nodejs-typescript-starter.git",
