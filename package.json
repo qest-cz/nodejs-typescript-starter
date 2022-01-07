@@ -13,6 +13,7 @@
     "build": "rimraf dist && tsc",
     "build:check": "tsc --noemit",
     "dev": "cross-env NODE_ENV=dev ts-node-dev --transpile-only --no-notify -r dotenv/config src/index.ts dotenv_config_path=./config/.env | pino-pretty",
+    "tunnel": "ngrok http 8000",
     "eslint:fix": "eslint . --fix --ext .ts",
     "eslint:check": "eslint . --quiet --ext  .ts",
     "test": "DOTENV_CONFIG_PATH=./config/.env.test jest",
@@ -23,10 +24,14 @@
     "clean": "concurrently 'rm -rf dist' 'rm -rf coverage'"
   },
   "dependencies": {
+    "axios": "^0.24.0",
     "dotenv": "^10.0.0",
-    "lodash": "^4.17.21"
+    "express": "^4.17.2",
+    "lodash": "^4.17.21",
+    "node-json-db": "^1.4.1"
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/jest": "^27.0.2",
     "@types/lodash": "^4.14.176",
     "@types/node": "^16.11.6",
@@ -36,6 +41,7 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-prettier": "^4.0.0",
     "jest": "^27.3.1",
+    "ngrok": "^4.2.2",
     "pino-pretty": "^7.1.0",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
